@@ -19,33 +19,5 @@
         android:textAllCaps="false"
         android:textColor="@color/icons" />
 
-    <Button
-        android:id="@+id/btn_talk2"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="@drawable/talk2"
-        android:layout_marginTop="@dimen/margin_medium"
-        android:text="@string/talk2"
-        android:paddingLeft="@dimen/margin_card_medium_2"
-        android:paddingBottom="@dimen/margin_card_medium_2"
-        android:gravity="left|bottom"
-        android:textAllCaps="false"
-        android:textColor="@color/icons"
-        />
-
-    <Button
-        android:id="@+id/btn_talk3"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginTop="@dimen/margin_medium"
-        android:background="@drawable/talk3"
-        android:gravity="left|bottom"
-        android:paddingBottom="@dimen/margin_card_medium_2"
-        android:paddingLeft="@dimen/margin_card_medium_2"
-        android:text="@string/talk3"
-        android:textAllCaps="false"
-        android:textColor="@color/icons"
-
-        />
 
 </LinearLayout>
