@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 
 import com.thirihtethtetko.tedtalkassignment.R;
 import com.thirihtethtetko.tedtalkassignment.viewholders.TalksViewHolder;
+import com.thirihtethtetko.tedtalkassignment.viewholders.WatchNextViewHolder;
 
 /**
  * Created by einandartun on 6/1/18.
@@ -17,7 +18,7 @@ public class WatchNextAdapter extends RecyclerView.Adapter {
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
         View view = layoutInflater.inflate(R.layout.view_holder_watch_next,parent,false);
-        return new TalksViewHolder(view);
+        return new WatchNextViewHolder(view);
 
     }
 
@@ -28,6 +29,6 @@ public class WatchNextAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        return 15;
+        return 10;
     }
 }

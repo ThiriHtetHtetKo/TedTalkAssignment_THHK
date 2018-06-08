@@ -5,31 +5,47 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+
+
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+
+
         <android.support.design.widget.CollapsingToolbarLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/tedtalk_details_appbar_height"
             app:contentScrim="@color/primary"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            >
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <ImageView
                 android:id="@+id/iv_news_backdrop"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
                 android:scaleType="centerCrop"
-                android:src="@drawable/talk1"
-                android:fitsSystemWindows="true"/>
+                android:src="@drawable/talk1" />
 
 
             <android.support.v7.widget.Toolbar
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin">
+
+                <ImageView
+                    android:id="@+id/iv_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_arrow_back_white_24dp"/>
+
+                <ImageView
+                    android:id="@+id/iv_vert"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_more_vert_white_24dp"
+                    android:layout_marginLeft="350dp"/>
 
             </android.support.v7.widget.Toolbar>
 
@@ -46,71 +62,94 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <TextView
+                android:id="@+id/tv_speaker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_medium_2"
+                android:layout_marginRight="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_medium_3"
+                android:lineSpacingMultiplier="1.3"
+                android:text="Anushka Naiknaware"
+                android:textColor="@color/primary_text"
+                android:textSize="18sp" />
+
 
             <TextView
                 android:id="@+id/tv_speaker_and_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/tv_speaker"
                 android:layout_marginLeft="@dimen/margin_medium_2"
                 android:layout_marginRight="@dimen/margin_medium_2"
-                android:layout_marginTop="@dimen/margin_medium_2"
-                android:lineSpacingMultiplier="1.3"
-                android:textColor="@color/primary_text"
                 android:text="@string/talk1"
-
-                />
+                android:textColor="@color/primary_text"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/tv_time"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/margin_medium_2"
-                android:layout_marginRight="@dimen/margin_medium_2"
-                android:layout_marginTop="@dimen/margin_medium_2"
-                android:textColor="@color/primary_text"
-                android:text="6:58  |  Listen"
-                android:textSize="15dp"
                 android:layout_below="@id/tv_speaker_and_title"
+                android:layout_marginLeft="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:text="6:58  |"
+                android:textSize="16sp"/>
 
-                />
+            <ImageView
+                android:id="@+id/iv_sound"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_below="@id/tv_speaker_and_title"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="17dp"
+                android:background="@drawable/sound"/>
+
+            <TextView
+                android:id="@+id/tv_listen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_speaker_and_title"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="16dp"
+                android:text="Listen"
+                android:textSize="16sp"/>
 
             <LinearLayout
                 android:id="@+id/ll_user_buttons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/tv_time"
                 android:layout_marginLeft="@dimen/margin_medium_2"
                 android:layout_marginRight="@dimen/margin_medium_2"
-                android:layout_marginTop="@dimen/margin_medium_2"
-                android:layout_below="@id/tv_time"
-                >
+                android:layout_marginTop="@dimen/margin_medium_2">
 
                 <ImageView
                     android:id="@+id/iv_add_to_mylist"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_playlist_add_black_24dp"
-                    android:paddingRight="@dimen/margin_medium_3"/>
+                    android:paddingRight="@dimen/margin_medium_3"
+                    android:src="@drawable/ic_playlist_add_black_24dp" />
 
                 <ImageView
                     android:id="@+id/iv_favourite"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_favorite_border_black_24dp"
-                    android:paddingRight="@dimen/margin_medium_3"/>
+                    android:paddingRight="@dimen/margin_medium_3"
+                    android:src="@drawable/ic_favorite_border_black_24dp" />
 
                 <ImageView
                     android:id="@+id/iv_download"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_file_download_black_24dp"
-                    android:paddingRight="@dimen/margin_medium_3"/>
+                    android:paddingRight="@dimen/margin_medium_3"
+                    android:src="@drawable/ic_file_download_black_24dp" />
 
                 <ImageView
                     android:id="@+id/iv_share"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/ic_share_black_24dp"
-                    />
+                    android:src="@drawable/ic_share_black_24dp" />
 
             </LinearLayout>
 
@@ -118,143 +157,155 @@
                 android:id="@+id/tv_tedtalk_details"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/ll_user_buttons"
                 android:layout_marginLeft="@dimen/margin_medium_2"
                 android:layout_marginRight="@dimen/margin_medium_2"
                 android:layout_marginTop="@dimen/margin_medium_2"
                 android:lineSpacingMultiplier="1.3"
                 android:text="Working out of her garage, Anushka Naiknaware designed a sensor that tracks wound healing, becoming the youngest winner (at age 13) of the Google Science Fair. Her clever invention addresses the global challenge of chronic wounds, which don't heal properly due to preexisting conditions like diabetes and account for billions in medical costs worldwide. Join Naiknaware as she explains how her smart bandage works -- and how she's sharing her story to inspire others to make a difference."
-                android:textSize="@dimen/margin_medium_2"
                 android:textColor="@color/primary_text"
-                android:layout_below="@id/ll_user_buttons"
-                />
+                android:textSize="18sp" />
+
 
             <View
                 android:id="@+id/v_divider_under_detail"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/divider"
-                android:layout_marginTop="@dimen/margin_medium_3"
-                android:divider="@android:drawable/divider_horizontal_dark"
+                android:layout_below="@id/tv_tedtalk_details"
                 android:layout_marginLeft="@dimen/margin_medium_2"
                 android:layout_marginRight="@dimen/margin_medium_2"
-                android:layout_below="@id/tv_tedtalk_details"
+                android:layout_marginTop="@dimen/margin_medium_3"
+                android:background="@color/divider"
+                android:divider="@android:drawable/divider_horizontal_dark" />
 
-                />
+            <TextView
+                android:id="@+id/tv_sponsor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/v_divider_under_detail"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="@dimen/margin_medium"
+                android:text="TED Talks are free thanks to support from"
+                android:textSize="16sp"
+                android:textStyle="italic" />
 
+            <ImageButton
+                android:id="@+id/ib_sponsor_button"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@id/tv_sponsor"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/margin_medium_2"
+                android:layout_marginRight="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_medium" />
+
+            <View
+                android:id="@+id/v_under_sponsor_button"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_below="@id/ib_sponsor_button"
+                android:layout_marginLeft="@dimen/margin_medium_2"
+                android:layout_marginRight="@dimen/margin_medium_2"
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:background="@color/divider"
+                android:divider="@android:drawable/divider_horizontal_dark" />
 
             <TextView
                 android:id="@+id/tv_about_the_speaker"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:text="About the Speaker"
-                android:textSize="@dimen/text_heading_1x"
-                android:textColor="@color/primary_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/v_under_sponsor_button"
                 android:layout_marginLeft="@dimen/margin_medium_2"
                 android:layout_marginRight="@dimen/margin_medium_2"
-                android:layout_marginTop="@dimen/margin_medium_3"
-                android:layout_below="@id/v_divider_under_detail"
-
-                />
+                android:layout_marginTop="@dimen/margin_medium_2"
+                android:text="About the Speaker"
+                android:textColor="@color/primary_text"
+                android:textSize="24sp" />
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/civ_speaker_profile_photo"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/speaker"
-                android:layout_marginTop="25dp"
-                android:scaleType="centerCrop"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_below="@id/tv_about_the_speaker"
                 android:layout_marginLeft="@dimen/margin_medium_2"
+                android:layout_marginTop="25dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/speaker" />
 
-                />
 
             <TextView
                 android:id="@+id/tv_speaker_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/speaker_name"
                 android:layout_below="@id/tv_about_the_speaker"
-                android:paddingLeft="130dp"
                 android:layout_marginTop="@dimen/margin_medium_3"
+                android:paddingLeft="80dp"
+                android:text="@string/speaker_name"
                 android:textColor="@color/primary_text"
-
-
-                />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/tv_speaker_occupation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/speaker_occupation"
                 android:layout_below="@id/tv_speaker_name"
-                android:paddingLeft="130dp"
                 android:layout_marginTop="@dimen/margin_small"
-                android:textColor="@color/primary_text"
-                />
+                android:paddingLeft="80dp"
+                android:text="@string/speaker_occupation" />
 
             <TextView
                 android:id="@+id/tv_about_speaker"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_speaker_occupation"
-                android:paddingLeft="130dp"
-                android:textSize="15sp"
-                android:textColor="@color/primary_text"
                 android:layout_marginTop="@dimen/margin_medium_3"
-                android:text="In 2016, at age 13, Anushka Naiknaware was the youngest winner of the Google Science Fair, with her invention of a clever new bandage that tells caregivers when it needs to be changed"
                 android:lineSpacingMultiplier="1.3"
-                />
+                android:paddingLeft="80dp"
+                android:paddingRight="@dimen/margin_medium_2"
+                android:text="In 2016, at age 13, Anushka Naiknaware was the youngest winner of the Google Science Fair, with her invention of a clever new bandage that tells caregivers when it needs to be changed"
+                android:textColor="@color/primary_text"
+                android:textSize="17sp" />
 
             <View
                 android:id="@+id/v_divider_under_about_speaker"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/divider"
-                android:layout_marginTop="@dimen/margin_medium_3"
-                android:divider="@android:drawable/divider_horizontal_dark"
+                android:layout_below="@id/tv_about_speaker"
                 android:layout_marginLeft="@dimen/margin_medium_2"
                 android:layout_marginRight="@dimen/margin_medium_2"
-                android:layout_below="@id/tv_about_speaker"
-
-                />
+                android:layout_marginTop="@dimen/margin_medium_3"
+                android:background="@color/divider"
+                android:divider="@android:drawable/divider_horizontal_dark" />
 
             <TextView
                 android:id="@+id/tv_watch_next"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Watch Next"
-                android:textSize="@dimen/text_big"
-                android:textColor="@color/primary_text"
+                android:layout_below="@id/v_divider_under_about_speaker"
+                android:layout_margin="@dimen/margin_medium_3"
                 android:layout_marginLeft="@dimen/margin_medium_2"
                 android:layout_marginRight="@dimen/margin_medium_2"
-                android:layout_below="@id/v_divider_under_about_speaker"
-                />
+                android:text="Watch Next"
+                android:textColor="@color/primary_text"
+                android:textSize="24sp" />
 
             <FrameLayout
                 android:id="@+id/fl_watch_next"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="360dp"
                 android:layout_below="@id/tv_watch_next"
                 android:layout_marginLeft="@dimen/margin_medium_2"
                 android:layout_marginRight="@dimen/margin_medium_2"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                >
-
-
-
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/rv_watch_next"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
-
+                    android:layout_height="wrap_content" />
 
             </FrameLayout>
 
-
         </RelativeLayout>
-
-
 
     </android.support.v4.widget.NestedScrollView>
 
@@ -262,14 +313,10 @@
         android:id="@+id/fab_favorite_news"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_play_arrow_white_36dp"
-        app:layout_anchor="@id/appbar"
-        app:layout_anchorGravity="right|bottom"
         android:layout_marginRight="@dimen/margin_medium_2"
         android:backgroundTint="@color/primary_dark"
-        />
-
-
-
+        android:src="@drawable/ic_play_arrow_white_36dp"
+        app:layout_anchor="@id/appbar"
+        app:layout_anchorGravity="right|bottom" />
 
 </android.support.design.widget.CoordinatorLayout>
