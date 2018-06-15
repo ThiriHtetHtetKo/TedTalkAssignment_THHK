@@ -14,5 +14,23 @@ public class TedPodCastsVO {
     private String description;
     private List<SegmentsVO> segments;
 
+    public String getPodCastId() {
+        return podCastId;
+    }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public List<SegmentsVO> getSegments() {
+        return segments;
+    }
 }

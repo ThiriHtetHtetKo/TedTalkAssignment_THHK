@@ -15,4 +15,27 @@ public class TedPlaylistsVO {
     private String description;
     private List<TedTalksVO> talksInPlaylist;
 
+    public int getPlaylistId() {
+        return playlistId;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public int getTotalTalks() {
+        return totalTalks;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public List<TedTalksVO> getTalksInPlaylist() {
+        return talksInPlaylist;
+    }
 }

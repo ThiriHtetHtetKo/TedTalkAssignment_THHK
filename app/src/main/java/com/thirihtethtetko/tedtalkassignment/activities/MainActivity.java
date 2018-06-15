@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.thirihtethtetko.tedtalkassignment.R;
+import com.thirihtethtetko.tedtalkassignment.data.models.TedTalksModel;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
 
 
     }

@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 
 import com.thirihtethtetko.tedtalkassignment.R;
 import com.thirihtethtetko.tedtalkassignment.adapters.TalksAdapter;
+import com.thirihtethtetko.tedtalkassignment.data.models.TedTalksModel;
 import com.thirihtethtetko.tedtalkassignment.delegates.TalksDelegate;
 
 public class TedTalkListActivity extends BaseActivity implements TalksDelegate {
@@ -29,6 +30,7 @@ public class TedTalkListActivity extends BaseActivity implements TalksDelegate {
         rvtalks.setLayoutManager(new LinearLayoutManager(getApplicationContext(),
                 LinearLayoutManager.VERTICAL,false));
 
+        TedTalksModel.getObjInstance().loadTalksList();
     }
 
     @Override

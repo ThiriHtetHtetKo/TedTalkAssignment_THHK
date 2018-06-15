@@ -13,4 +13,31 @@ public class TedTalksVO {
     private String description;
     private List<TagVO> tag;
 
+    public String getTalkID() {
+        return talkID;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public SpeakerVO getSpeaker() {
+        return speaker;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public int getDuationsInSec() {
+        return duationsInSec;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public List<TagVO> getTag() {
+        return tag;
+    }
 }
