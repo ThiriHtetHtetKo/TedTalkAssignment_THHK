@@ -1,19 +1,21 @@
 package com.thirihtethtetko.tedtalkassignment.delegates;
 
+import com.thirihtethtetko.tedtalkassignment.data.vos.TedTalksVO;
+
 /**
  * Created by einandartun on 6/7/18.
  */
 
 public interface TalksDelegate {
 
-    void onTapTalks();
+    void onTapTalks(TedTalksVO talks);
 
-    void onTapFavorite();
+    void onTapFavorite(TedTalksVO talks);
 
-    void onTapDownload();
+    void onTapDownload(TedTalksVO talks);
 
-    void onTapShare();
+    void onTapShare(TedTalksVO talks);
 
-    void onTapPlay();
+    void onTapPlay(TedTalksVO talks);
 
 }

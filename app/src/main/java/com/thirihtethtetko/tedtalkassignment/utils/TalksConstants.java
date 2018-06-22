@@ -11,7 +11,6 @@ public class TalksConstants {
 
         public  static final String PARAM_ACCESS_TOKEN="access_token";
 
-        public static final String PARAM_PAGE="";
-
+        public static final String PARAM_PAGE="page";
 
 }

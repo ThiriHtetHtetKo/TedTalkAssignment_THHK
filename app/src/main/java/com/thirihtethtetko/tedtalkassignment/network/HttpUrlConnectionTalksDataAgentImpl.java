@@ -2,12 +2,17 @@ package com.thirihtethtetko.tedtalkassignment.network;
 
 
 import android.os.AsyncTask;
+import android.util.EventLog;
 import android.util.Log;
 
+import com.google.gson.Gson;
+import com.thirihtethtetko.tedtalkassignment.events.ApiErrorEvent;
+import com.thirihtethtetko.tedtalkassignment.events.SuccessGetTalksEvent;
+import com.thirihtethtetko.tedtalkassignment.network.responses.GetTalksResponse;
 import com.thirihtethtetko.tedtalkassignment.utils.TalksConstants;
-
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
+import org.greenrobot.eventbus.EventBus;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -41,7 +46,7 @@ public class HttpUrlConnectionTalksDataAgentImpl implements TalksDataAgent {
     }
 
     @Override
-    public void loadTalksList(int page, String accessToken) {
+    public void loadTalksList(final int page, final String accessToken) {
         new AsyncTask<Void, Void, String>() {
             @Override
             protected String doInBackground(Void... voids) {
@@ -50,7 +55,7 @@ public class HttpUrlConnectionTalksDataAgentImpl implements TalksDataAgent {
                 BufferedReader reader = null;
                 StringBuilder stringBuilder;
 
-                try{
+                try {
 
                     url = new URL(TalksConstants.API_BASE + TalksConstants.GET_TALKS); //1.
                     HttpURLConnection connection = (HttpURLConnection) url.openConnection(); //2.
@@ -69,7 +74,8 @@ public class HttpUrlConnectionTalksDataAgentImpl implements TalksDataAgent {
 
                     //put the request parameter into NameValuePair list.
                     List<NameValuePair> params = new ArrayList<>(); //6.
-                    params.add(new BasicNameValuePair(TalksConstants.PARAM_ACCESS_TOKEN, TalksConstants.ACCESS_TOKEN));
+                    params.add(new BasicNameValuePair(TalksConstants.PARAM_ACCESS_TOKEN, accessToken));
+                    params.add(new BasicNameValuePair(TalksConstants.PARAM_PAGE,String.valueOf(page)));
 
                     //write the parameters from NameValuePair list into connection obj.
                     OutputStream outputStream = connection.getOutputStream();
@@ -93,7 +99,7 @@ public class HttpUrlConnectionTalksDataAgentImpl implements TalksDataAgent {
                     String responseString = stringBuilder.toString(); //9.
                     // AttractionListResponse response = CommonInstances.getGsonInstance().fromJson(responseString, AttractionListResponse.class);
                     //List<AttractionVO> attractionList = response.getAttractionList();
-                    Log.d("msg",responseString);
+                    Log.d("msg", responseString);
                     return responseString;
 
                 } catch (Exception e) {
@@ -132,12 +138,30 @@ public class HttpUrlConnectionTalksDataAgentImpl implements TalksDataAgent {
                 return result.toString();
             }
 
+            /*@Override
+            protected void onPreExecute(String responseString) {
+                super.onPreExecute(responseString);
+            }
+        }.execute();*/
+
             @Override
-            protected void onPreExecute() {
-                super.onPreExecute();
+            protected void onPostExecute(String responseString) {
+                super.onPostExecute(responseString);
+
+                Gson gson = new Gson();
+                GetTalksResponse talksResponse = gson.fromJson(responseString,GetTalksResponse.class);
+                Log.d("onPostExecute","Talks List Size : "+talksResponse.getTedTalks().size());
+
+                if(talksResponse.isResponseOK()){
+                    SuccessGetTalksEvent event = new SuccessGetTalksEvent(talksResponse.getTedTalks());
+                    EventBus.getDefault().post(event);
+                } else {
+                    ApiErrorEvent event = new ApiErrorEvent(talksResponse.getMessage());
+                    EventBus.getDefault().post(event);
+
+
+                }
             }
         }.execute();
-
-
     }
 }

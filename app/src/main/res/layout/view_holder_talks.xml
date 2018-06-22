@@ -2,17 +2,16 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingRight="@dimen/margin_small"
-    android:paddingLeft="@dimen/margin_small"
-    android:paddingTop="@dimen/margin_small"
+    android:paddingTop="@dimen/margin_medium"
+
     >
 
     <ImageView
         android:id="@+id/iv_speaker_photo"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="210dp"
         android:src="@drawable/speaker_photo"
-
+        android:scaleType="centerCrop"
         />
 
     <TextView
@@ -21,21 +20,22 @@
         android:layout_height="wrap_content"
         android:text="Anushka Naiknaware"
         android:textColor="@color/text_color"
-        android:layout_marginTop="115dp"
-        android:textSize="@dimen/text_regular"
+        android:layout_marginTop="@dimen/menu_button_margin_top"
+        android:textSize="@dimen/text_regular_2x"
         android:paddingLeft="@dimen/margin_medium_2"
         />
 
     <TextView
         android:id="@+id/tv_speak_title"
-        android:layout_width="300dp"
+        android:layout_width="330dp"
         android:layout_height="wrap_content"
         android:text="A teen scientist invention to help wounds heal."
         android:textColor="@color/text_color"
         android:layout_below="@id/tv_speaker_name"
         android:textStyle="bold"
         android:paddingLeft="@dimen/margin_medium_2"
-        android:textSize="@dimen/text_regular_2x"
+        android:textSize="@dimen/text_regular_3x"
+
         />
 
     <ImageView
@@ -50,16 +50,14 @@
         />
 
     <TextView
-        android:id="@+id/tv_time"
+        android:id="@+id/tv_duation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="06:58"
         android:layout_below="@id/v_menu"
         android:textColor="@color/text_color"
         android:paddingRight="@dimen/margin_medium_2"
-        android:layout_marginTop="@dimen/margin_medium_3"
         android:layout_alignParentRight="true"
         />
-
 
 </RelativeLayout>
